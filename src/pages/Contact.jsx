@@ -35,12 +35,13 @@ const Contact = () => {
                 setStatus('error');
 
                 // Specific error handling for Network issues
-                if (error.text && (error.text.toLowerCase().includes("network") || error.text.toLowerCase().includes("failed to fetch"))) {
-                    setErrorMessage("Network blocked. Disable AdBlocker/VPN & try again.");
-                } else if (error.status === 0) {
-                    setErrorMessage("Connection failed. Check your internet or AdBlocker.");
+                const errorMsg = error.text || error.message || (typeof error === 'string' ? error : JSON.stringify(error));
+                console.error("FULL EMAILJS ERROR:", error);
+
+                if (error.status === 0) {
+                    setErrorMessage(`Network/Connection Error: ${errorMsg}. (Check console for details)`);
                 } else {
-                    setErrorMessage(`Failed: ${error.text || "Unknown error"}`);
+                    setErrorMessage(`Error (${error.status}): ${errorMsg}`);
                 }
             });
     };
@@ -107,14 +108,14 @@ const Contact = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
-                                <input type="text" name="user_name" required
+                                <input type="text" name="name" required
                                     className="w-full bg-dark-300/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all placeholder:text-gray-600"
                                     placeholder="John Doe"
                                 />
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                                <input type="email" name="user_email" required
+                                <input type="email" name="email" required
                                     className="w-full bg-dark-300/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all placeholder:text-gray-600"
                                     placeholder="john@example.com"
                                 />
@@ -123,7 +124,7 @@ const Contact = () => {
 
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-2">Subject</label>
-                            <select className="w-full bg-dark-300/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all">
+                            <select name="title" className="w-full bg-dark-300/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all">
                                 <option>General Inquiry</option>
                                 <option>Project Proposal</option>
                                 <option>Hiring / Job Opportunity</option>
