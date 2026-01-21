@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import DynamicStackIcon from './DynamicStackIcon';
 
 const Hero = () => {
     return (
@@ -21,9 +23,11 @@ const Hero = () => {
                             Mirza
                         </span>
                     </h1>
-                    <h3 className="text-2xl md:text-3xl text-gray-400 mb-8 font-light max-w-2xl mx-auto">
-                        Software Engineering Student & <span className="text-white font-medium">Full Stack Architect</span>
-                    </h3>
+                    <div className="flex flex-wrap items-center justify-center gap-3 text-lg md:text-2xl text-gray-400 mb-8 font-light max-w-2xl mx-auto mt-4">
+                        <span>Software Engineering Student</span>
+                        <DynamicStackIcon />
+                        <span className="text-white font-medium">Full Stack Developer</span>
+                    </div>
 
                     <p className="max-w-2xl mx-auto text-gray-500 mb-12 text-lg leading-relaxed">
                         I build digital experiences that blend high-performance engineering with immersive design.

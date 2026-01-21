@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -41,17 +42,17 @@ const Navbar = () => {
     return (
         <>
             <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-                <nav className="w-full max-w-4xl bg-dark-100/70 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl shadow-black/20 transition-all duration-300">
-                    <div className="px-6 h-16 flex items-center justify-between">
+                <nav className="w-full max-w-4xl bg-black/30 backdrop-blur-md border-b border-white/10 rounded-full shadow-lg transition-all duration-300 overflow-visible">
+                    <div className="px-6 py-2 flex items-center justify-between relative">
                         {/* Logo */}
-                        <Link to="/" className="flex-shrink-0 group relative z-50" onClick={() => setIsOpen(false)}>
-                            <span className="text-xl font-bold tracking-tighter text-white flex items-center gap-1">
-                                <div className="w-6 h-6 bg-white rounded-md flex items-center justify-center text-black font-black text-xs transform group-hover:rotate-12 transition-transform">H</div>
-                                <span>Mirza</span>
+                        <Link to="/" className="flex-shrink-0 z-50 flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
+                            <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-black font-bold text-lg font-sans transition-transform group-hover:scale-110">
+                                H
+                            </div>
+                            <span className="text-xl font-bold tracking-tight text-gray-400 group-hover:text-white transition-colors">
+                                Mirza
                             </span>
-                        </Link>
-
-                        {/* Desktop Nav */}
+                        </Link>{/* Desktop Nav */}
                         <div className="hidden md:flex items-center space-x-1">
                             {navLinks.map((link) => (
                                 <a
@@ -59,8 +60,8 @@ const Navbar = () => {
                                     href={link.path}
                                     onClick={(e) => handleNavClick(e, link.path)}
                                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${link.isCta
-                                            ? 'bg-white text-black hover:bg-gray-200 font-bold ml-2'
-                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                        ? 'bg-white text-black hover:bg-gray-200 font-bold ml-2'
+                                        : 'text-gray-400 hover:text-white hover:bg-white/5'
                                         }`}
                                 >
                                     {link.name}

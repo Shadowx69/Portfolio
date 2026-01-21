@@ -1,27 +1,54 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Linkedin, Github, Send, CheckCircle, ArrowLeft } from 'lucide-react';
+import { Mail, MessageCircle, Linkedin, Github, Send, CheckCircle, ArrowLeft, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const form = useRef();
     const [status, setStatus] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    // Force reset status on component mount to prevent "ghost" states
+    useEffect(() => {
+        setStatus('');
+        setErrorMessage('');
+    }, []);
 
     const sendEmail = (e) => {
         e.preventDefault();
         setStatus('sending');
-        // Simulate sending
-        setTimeout(() => {
-            setStatus('success');
-            e.target.reset();
-        }, 1500);
+        setErrorMessage('');
+
+        const SERVICE_ID = 'service_renfip7'.trim();
+        const TEMPLATE_ID = 'template_v0fa9fr'.trim();
+        const PUBLIC_KEY = 'LQGj-InR7DojFzmvk'.trim();
+
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            .then((result) => {
+                setStatus('success');
+                e.target.reset();
+                setTimeout(() => setStatus(''), 5000);
+            }, (error) => {
+                console.error("EmailJS Error:", error);
+
+                setStatus('error');
+
+                // Specific error handling for Network issues
+                if (error.text && (error.text.toLowerCase().includes("network") || error.text.toLowerCase().includes("failed to fetch"))) {
+                    setErrorMessage("Network blocked. Disable AdBlocker/VPN & try again.");
+                } else if (error.status === 0) {
+                    setErrorMessage("Connection failed. Check your internet or AdBlocker.");
+                } else {
+                    setErrorMessage(`Failed: ${error.text || "Unknown error"}`);
+                }
+            });
     };
 
     const socialLinks = [
         { icon: Mail, label: 'Email', value: 'haiderjeh@gmail.com', href: 'mailto:haiderjeh@gmail.com' },
-        { icon: Phone, label: 'Phone', value: '+92 319 5476967', href: 'tel:+923195476967' },
-        { icon: Linkedin, label: 'LinkedIn', value: 'Connect Profile', href: 'https://www.linkedin.com/in/haider-jehangir-842a08361' },
+        { icon: MessageCircle, label: 'WhatsApp', value: '+92 319 5476967', href: 'https://wa.me/923195476967' },
+        { icon: Linkedin, label: 'LinkedIn', value: 'Connect with me', href: 'https://www.linkedin.com/in/haider-jehangir-842a08361' },
         { icon: Github, label: 'GitHub', value: 'Shadowx69', href: 'https://github.com/Shadowx69' },
     ];
 
@@ -112,19 +139,36 @@ const Contact = () => {
                             ></textarea>
                         </div>
 
-                        <button
-                            type="submit"
-                            disabled={status === 'sending'}
-                            className="w-full py-4 bg-white text-black rounded-xl font-bold text-lg hover:bg-gray-200 transition-all transform hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
-                        >
-                            {status === 'sending' ? (
-                                'Sender...'
-                            ) : status === 'success' ? (
-                                <>Message Sent <CheckCircle size={20} /></>
-                            ) : (
-                                <>Send Message <Send size={20} /></>
+                        <div className="space-y-4">
+                            <button
+                                type="submit"
+                                disabled={status === 'sending'}
+                                className={`w-full py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 
+                                    ${status === 'error' ? 'bg-red-500/10 text-red-500 border border-red-500/50' : 'bg-white text-black hover:bg-gray-200'}
+                                    disabled:opacity-70 disabled:cursor-not-allowed`}
+                            >
+                                {status === 'sending' ? (
+                                    'Sending...'
+                                ) : status === 'success' ? (
+                                    <>Message Sent <CheckCircle size={20} /></>
+                                ) : status === 'error' ? (
+                                    <>Try Again <AlertCircle size={20} /></>
+                                ) : (
+                                    <>Send Message <Send size={20} /></>
+                                )}
+                            </button>
+
+                            {errorMessage && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center flex items-center justify-center gap-2"
+                                >
+                                    <AlertCircle size={16} />
+                                    <span>{errorMessage}</span>
+                                </motion.div>
                             )}
-                        </button>
+                        </div>
                     </form>
                 </motion.div>
 
