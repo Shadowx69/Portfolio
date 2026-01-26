@@ -110,14 +110,14 @@ const Contact = () => {
                                 <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
                                 <input type="text" name="name" required
                                     className="w-full bg-dark-300/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all placeholder:text-gray-600"
-                                    placeholder="John Doe"
+                                    placeholder="Haider Jehangir"
                                 />
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
                                 <input type="email" name="email" required
                                     className="w-full bg-dark-300/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all placeholder:text-gray-600"
-                                    placeholder="john@example.com"
+                                    placeholder="haiderjeh@gmail.com"
                                 />
                             </div>
                         </div>
