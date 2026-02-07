@@ -44,15 +44,6 @@ const ProjectCard = ({ title, type, stack, description, points, icon: Icon, dela
                     <Github size={18} />
                     <span className="group-hover/btn:underline underline-offset-4 decoration-accent-blue">View Code</span>
                 </a>
-
-                {/* Only show Demo if relevant (web apps mostly) */}
-                {!type.includes("Console") && !type.includes("C++") && !type.includes("Utility") && (
-                    <button className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors group/btn">
-                        <ExternalLink size={18} />
-                        <span className="group-hover/btn:underline underline-offset-4 decoration-accent-purple">Live Demo</span>
-                    </button>
-                )}
-
             </div>
         </div>
     </motion.div>
@@ -60,6 +51,19 @@ const ProjectCard = ({ title, type, stack, description, points, icon: Icon, dela
 
 const Projects = () => {
     const projects = [
+        {
+            title: "Keeb X",
+            type: "Full Stack • Scrollytelling",
+            stack: "Next.js, TypeScript, Framer Motion, Canvas API, Tailwind CSS",
+            icon: Layout,
+            github: "https://github.com/Shadowx69/KeebX-scrollytelling",
+            points: [
+                "Built scroll-controlled canvas animation with 100+ frame image sequence for immersive product storytelling.",
+                "Implemented keyboard-inspired color palette (cyan, purple, gold) with unified animated gradient backgrounds.",
+                "Created progressive content reveal system with scroll-triggered text overlays and smooth opacity transitions."
+            ],
+            delay: 0.1
+        },
         {
             title: "Wonderland Toy Store",
             type: "Full Stack • E-Commerce",
@@ -71,7 +75,7 @@ const Projects = () => {
                 "Integrated Three.js to render interactive 3D model, boosting engagement.",
                 "Implemented secure RESTful API architecture for seamless data handling."
             ],
-            delay: 0.1
+            delay: 0.2
         },
         {
             title: "Event Management System",
@@ -84,7 +88,7 @@ const Projects = () => {
                 "Utilized stored procedures in SSMS for real-time validation of attendee data.",
                 "Optimized database queries for high-volume transactions."
             ],
-            delay: 0.2
+            delay: 0.3
         },
         {
             title: "Dynamic Blog Platform",
@@ -97,7 +101,7 @@ const Projects = () => {
                 "Implemented session-based authentication and secure password hashing.",
                 "Designed a mobile-first UI ensuring performance across devices."
             ],
-            delay: 0.3
+            delay: 0.4
         },
         {
             title: "Train Route System",
@@ -110,7 +114,7 @@ const Projects = () => {
                 "Optimized traversal algorithms to calculate fares and distances efficiently.",
                 "Integrated persistent storage with SSMS for complex schedule management."
             ],
-            delay: 0.4
+            delay: 0.5
         },
         {
             title: "ATM System",
@@ -123,7 +127,7 @@ const Projects = () => {
                 "Implemented secure transaction logic, account management, and history tracking.",
                 "Demonstrated encapsulation and inheritance for secure data handling."
             ],
-            delay: 0.5
+            delay: 0.6
         },
         {
             title: "Adventures of Eldoria",
@@ -136,7 +140,7 @@ const Projects = () => {
                 "Applied advanced Polymorphism to manage diverse character classes and states.",
                 "Designed a complex state machine for game loop management."
             ],
-            delay: 0.6
+            delay: 0.7
         },
         {
             title: "Timetable Application",
@@ -145,7 +149,7 @@ const Projects = () => {
             icon: Code2,
             github: "https://github.com/Shadowx69/TimeTable-App",
             points: ["Tool for optimizing weekly student schedules and conflict detection."],
-            delay: 0.7
+            delay: 0.8
         }
     ];
 
