@@ -34,13 +34,13 @@ const Skills = () => {
         {
             category: "Languages",
             icon: Code2,
-            skills: ["C++", "C#", "Java", "JavaScript (ES6+)", "SQL", "HTML5", "CSS3"],
+            skills: ["C++", "C#", "Java", "Python", "JavaScript (ES6+)", "SQL", "HTML5", "CSS3"],
             delay: 0.2
         },
         {
             category: "Frameworks & Libraries",
             icon: Layout,
-            skills: ["React.js", "Node.js", "Express.js", "jQuery", "Three.js", "EJS", "Bootstrap"],
+            skills: ["TypeScript", "React.js", "Node.js", "Express.js", "jQuery", "Three.js", "EJS", "Bootstrap"],
             delay: 0.3
         },
         {
