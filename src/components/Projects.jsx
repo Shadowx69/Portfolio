@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Code2, Database, Layout } from 'lucide-react';
+import { Github, ExternalLink, Code2, Database, Layout, Cpu } from 'lucide-react';
 
 const ProjectCard = ({ title, type, stack, description, points, icon: Icon, delay, github }) => (
     <motion.div
@@ -65,6 +65,20 @@ const Projects = () => {
             delay: 0.1
         },
         {
+            title: "Snapcook",
+            type: "AI • Computer Vision",
+            stack: "React, Node.js, Express.js, MongoDB, Gemini 2.5 Flash, Tailwind",
+            icon: Cpu,
+            github: "https://github.com/Shadowx69",
+            points: [
+                "Developed an AI-powered culinary assistant that generates recipes from food images using Gemini 2.5 Flash for high-accuracy analysis.",
+                "Implemented three distinct dietary modes: Standard, High Protein, and Low Fat, allowing users to tailor results to their fitness goals.",
+                "Engineered a unique Recipe Fusion feature that enables users to merge two different recipes into a single, cohesive culinary creation.",
+                "Automated ingredient identification via image detection to minimize manual entry and enhance the user workflow."
+            ],
+            delay: 0.2
+        },
+        {
             title: "Wonderland Toy Store",
             type: "Full Stack • E-Commerce",
             stack: "React, Node.js, Express.js, MySQL, Three.js, Tailwind",
@@ -75,7 +89,7 @@ const Projects = () => {
                 "Integrated Three.js to render interactive 3D model, boosting engagement.",
                 "Implemented secure RESTful API architecture for seamless data handling."
             ],
-            delay: 0.2
+            delay: 0.3
         },
         {
             title: "Event Management System",
@@ -88,7 +102,7 @@ const Projects = () => {
                 "Utilized stored procedures in SSMS for real-time validation of attendee data.",
                 "Optimized database queries for high-volume transactions."
             ],
-            delay: 0.3
+            delay: 0.4
         },
         {
             title: "Dynamic Blog Platform",
@@ -101,7 +115,7 @@ const Projects = () => {
                 "Implemented session-based authentication and secure password hashing.",
                 "Designed a mobile-first UI ensuring performance across devices."
             ],
-            delay: 0.4
+            delay: 0.5
         },
         {
             title: "Train Route System",
@@ -114,7 +128,7 @@ const Projects = () => {
                 "Optimized traversal algorithms to calculate fares and distances efficiently.",
                 "Integrated persistent storage with SSMS for complex schedule management."
             ],
-            delay: 0.5
+            delay: 0.6
         },
         {
             title: "ATM System",
@@ -127,7 +141,7 @@ const Projects = () => {
                 "Implemented secure transaction logic, account management, and history tracking.",
                 "Demonstrated encapsulation and inheritance for secure data handling."
             ],
-            delay: 0.6
+            delay: 0.7
         },
         {
             title: "Adventures of Eldoria",
@@ -140,7 +154,7 @@ const Projects = () => {
                 "Applied advanced Polymorphism to manage diverse character classes and states.",
                 "Designed a complex state machine for game loop management."
             ],
-            delay: 0.7
+            delay: 0.8
         },
         {
             title: "Timetable Application",
@@ -149,7 +163,7 @@ const Projects = () => {
             icon: Code2,
             github: "https://github.com/Shadowx69/TimeTable-App",
             points: ["Tool for optimizing weekly student schedules and conflict detection."],
-            delay: 0.8
+            delay: 0.9
         }
     ];
 

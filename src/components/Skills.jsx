@@ -34,19 +34,19 @@ const Skills = () => {
         {
             category: "Languages",
             icon: Code2,
-            skills: ["C++", "C#", "Java", "Python", "JavaScript (ES6+)", "SQL", "HTML5", "CSS3"],
+            skills: ["C++", "C#", "Java", "Python", "JavaScript", "SQL"],
             delay: 0.2
         },
         {
             category: "Frameworks & Libraries",
             icon: Layout,
-            skills: ["TypeScript", "React.js", "Node.js", "Express.js", "jQuery", "Three.js", "EJS", "Bootstrap"],
+            skills: ["TypeScript", "React.js", "Node.js", "Express.js", "Three.js", "FastAPI"],
             delay: 0.3
         },
         {
             category: "Databases",
             icon: Database,
-            skills: ["MySQL", "Microsoft SQL Server (SSMS)", "MongoDB"],
+            skills: ["MySQL", "Microsoft SQL Server", "MongoDB"],
             delay: 0.4
         },
         {
