@@ -52,7 +52,7 @@ const Skills = () => {
         {
             category: "Tools & Concepts",
             icon: Terminal,
-            skills: ["Git", "RESTful APIs", "OOP", "VS Code", "Postman", "DSA"],
+            skills: ["Docker", "Git", "RESTful APIs", "OOP", "VS Code", "Postman", "DSA"],
             delay: 0.5
         }
     ];
