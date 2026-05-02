@@ -41,7 +41,7 @@ const Navbar = () => {
     return (
         <>
             <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-                <nav className="w-full max-w-4xl bg-black/30 backdrop-blur-md border-b border-white/10 rounded-full shadow-lg transition-all duration-300 overflow-visible">
+                <nav className="w-full max-w-4xl bg-black/30 backdrop-blur-md border-b border-white/10 rounded-2xl shadow-lg transition-all duration-300 overflow-visible">
                     <div className="px-6 py-2 flex items-center justify-between relative">
                         {/* Logo */}
                         <Link to="/" className="flex-shrink-0 z-50 flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
@@ -58,7 +58,7 @@ const Navbar = () => {
                                     key={link.name}
                                     href={link.path}
                                     onClick={(e) => handleNavClick(e, link.path)}
-                                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${link.isCta
+                                    className={`px-5 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${link.isCta
                                         ? 'bg-white text-black hover:bg-gray-200 font-bold ml-2'
                                         : 'text-gray-400 hover:text-white hover:bg-white/5'
                                         }`}

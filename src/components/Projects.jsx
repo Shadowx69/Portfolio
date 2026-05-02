@@ -50,120 +50,166 @@ const ProjectCard = ({ title, type, stack, description, points, icon: Icon, dela
 );
 
 const Projects = () => {
-    const projects = [
+    const projectCategories = [
         {
-            title: "Keeb X",
-            type: "Full Stack • Scrollytelling",
-            stack: "Next.js, TypeScript, Framer Motion, Canvas API, Tailwind CSS",
-            icon: Layout,
-            github: "https://github.com/Shadowx69/KeebX-scrollytelling",
-            points: [
-                "Built scroll-controlled canvas animation with 100+ frame image sequence for immersive product storytelling.",
-                "Implemented keyboard-inspired color palette (cyan, purple, gold) with unified animated gradient backgrounds.",
-                "Created progressive content reveal system with scroll-triggered text overlays and smooth opacity transitions."
-            ],
-            delay: 0.1
+            title: "Ongoing Project",
+            projects: [
+                {
+                    title: "SnapCook Web Application",
+                    type: "AI • Full Stack",
+                    stack: "React, Node.js, Express.js, MongoDB, Gemini 2.5 Flash, Tailwind",
+                    icon: Cpu,
+                    github: "https://github.com/Shadowx69",
+                    points: [
+                        "Developing AI-based system to generate recipes from ingredients using cloud and local models."
+                    ],
+                    delay: 0.1
+                }
+            ]
         },
         {
-            title: "Snapcook",
-            type: "AI • Computer Vision",
-            stack: "React, Node.js, Express.js, MongoDB, Gemini 2.5 Flash, Tailwind",
-            icon: Cpu,
-            github: "https://github.com/Shadowx69",
-            points: [
-                "Developed an AI-powered culinary assistant that generates recipes from food images using Gemini 2.5 Flash for high-accuracy analysis.",
-                "Implemented three distinct dietary modes: Standard, High Protein, and Low Fat, allowing users to tailor results to their fitness goals.",
-                "Engineered a unique Recipe Fusion feature that enables users to merge two different recipes into a single, cohesive culinary creation.",
-                "Automated ingredient identification via image detection to minimize manual entry and enhance the user workflow."
-            ],
-            delay: 0.2
+            title: "Machine Learning Projects",
+            projects: [
+                {
+                    title: "Intern Performance Prediction System",
+                    type: "Machine Learning",
+                    stack: "Python, Scikit-learn, Random Forest, XGBoost",
+                    icon: Cpu,
+                    github: "https://github.com/Shadowx69",
+                    points: [
+                        "Built regression models on 110+ records using attendance, task completion time, and feedback; improved prediction accuracy using XGBoost."
+                    ],
+                    delay: 0.2
+                },
+                {
+                    title: "Interview Question Generator",
+                    type: "Machine Learning",
+                    stack: "Python, LLaMA 3, Groq API, Prompt Engineering",
+                    icon: Cpu,
+                    github: "https://github.com/Shadowx69",
+                    points: [
+                        "Built a text generation pipeline using LLaMA 3 to auto-generate role-specific interview questions from intern profiles and job descriptions across 9 engineering domains."
+                    ],
+                    delay: 0.3
+                },
+                {
+                    title: "Intern Feedback Sentiment Analysis",
+                    type: "Machine Learning",
+                    stack: "Python, Logistic Regression, Transformers, NLP",
+                    icon: Cpu,
+                    github: "https://github.com/Shadowx69/intern-feedback-analyzer",
+                    points: [
+                        "Performed sentiment classification on 520+ feedback entries; compared traditional ML and transformer models for insights."
+                    ],
+                    delay: 0.4
+                }
+            ]
         },
         {
-            title: "Wonderland Toy Store",
-            type: "Full Stack • E-Commerce",
-            stack: "React, Node.js, Express.js, MySQL, Three.js, Tailwind",
-            icon: Layout,
-            github: "https://github.com/Shadowx69/Wonderland-Toystore",
-            points: [
-                "Architected a scalable e-commerce platform with a custom Admin Dashboard.",
-                "Integrated Three.js to render interactive 3D model, boosting engagement.",
-                "Implemented secure RESTful API architecture for seamless data handling."
-            ],
-            delay: 0.3
+            title: "Full Stack Projects",
+            projects: [
+                {
+                    title: "Wonderland Toy Store E-Commerce",
+                    type: "Full Stack",
+                    stack: "React, Node.js, Express.js, MySQL, Three.js, Tailwind",
+                    icon: Layout,
+                    github: "https://github.com/Shadowx69/Wonderland-Toystore",
+                    points: [
+                        "Developed full-stack application with admin panel and inventory system.",
+                        "Integrated Three.js to render interactive 3D model, boosting engagement.",
+                        "Implemented secure RESTful API architecture for seamless data handling."
+                    ],
+                    delay: 0.1
+                },
+                {
+                    title: "Dynamic Blog Platform CMS",
+                    type: "Full Stack",
+                    stack: "Node.js, Express.js, EJS, MongoDB",
+                    icon: Layout,
+                    github: "https://github.com/Shadowx69/Blog-Site",
+                    points: [
+                        "Built content management system with CRUD operations and responsive UI.",
+                        "Implemented session-based authentication and secure password hashing.",
+                        "Designed a mobile-first UI ensuring performance across devices."
+                    ],
+                    delay: 0.2
+                },
+                {
+                    title: "Event Management System",
+                    type: "Full Stack",
+                    stack: "C#, HTML, CSS, Microsoft SQL Server, RESTful APIs",
+                    icon: Database,
+                    github: "https://github.com/Shadowx69/Event-Flow-Pro",
+                    points: [
+                        "Developed QR-based check-in system with real-time database validation.",
+                        "Utilized stored procedures in SSMS for real-time validation of attendee data.",
+                        "Optimized database queries for high-volume transactions."
+                    ],
+                    delay: 0.3
+                }
+            ]
         },
         {
-            title: "Event Management System",
-            type: "System Design • Operations",
-            stack: "C#, HTML, CSS, Microsoft SQL Server, RESTful APIs",
-            icon: Database,
-            github: "https://github.com/Shadowx69/Event-Flow-Pro",
-            points: [
-                "Engineered an operations system with dynamic QR Code generation for check-ins.",
-                "Utilized stored procedures in SSMS for real-time validation of attendee data.",
-                "Optimized database queries for high-volume transactions."
-            ],
-            delay: 0.4
+            title: "Frontend Projects",
+            projects: [
+                {
+                    title: "KeebX Interactive Product Page",
+                    type: "Frontend",
+                    stack: "Next.js, TypeScript, Framer Motion, Canvas API, Tailwind CSS",
+                    icon: Layout,
+                    github: "https://github.com/Shadowx69/KeebX-scrollytelling",
+                    points: [
+                        "Implemented scroll-based animations with 120+ frame rendering and interactive UI effects.",
+                        "Implemented keyboard-inspired color palette (cyan, purple, gold) with unified animated gradient backgrounds.",
+                        "Created progressive content reveal system with scroll-triggered text overlays and smooth opacity transitions."
+                    ],
+                    delay: 0.1
+                }
+            ]
         },
         {
-            title: "Dynamic Blog Platform",
-            type: "Full Stack • CMS",
-            stack: "Node.js, Express.js, EJS, MongoDB",
-            icon: Layout,
-            github: "https://github.com/Shadowx69/Blog-Site",
-            points: [
-                "Built a responsive CMS allowing full CRUD operations with server-side rendering.",
-                "Implemented session-based authentication and secure password hashing.",
-                "Designed a mobile-first UI ensuring performance across devices."
-            ],
-            delay: 0.5
-        },
-        {
-            title: "Train Route System",
-            type: "Algorithms • DSA",
-            stack: "C++, Microsoft SQL Server, STL",
-            icon: Code2,
-            github: "https://github.com/Shadowx69/Train-Management-system-GUI-MySQL-c-",
-            points: [
-                "Designed a sophisticated route tracking system using Double Linked Lists.",
-                "Optimized traversal algorithms to calculate fares and distances efficiently.",
-                "Integrated persistent storage with SSMS for complex schedule management."
-            ],
-            delay: 0.6
-        },
-        {
-            title: "ATM System",
-            type: "Software Design • OOP",
-            stack: "Java, Object Oriented Programming",
-            icon: Code2,
-            github: "https://github.com/Shadowx69/ATM",
-            points: [
-                "Built a robust banking simulation strictly following OOP principles.",
-                "Implemented secure transaction logic, account management, and history tracking.",
-                "Demonstrated encapsulation and inheritance for secure data handling."
-            ],
-            delay: 0.7
-        },
-        {
-            title: "Adventures of Eldoria",
-            type: "Game Dev • Strategy",
-            stack: "C++, Advanced OOP",
-            icon: Code2,
-            github: "https://github.com/Shadowx69/Text-Based-game--C--",
-            points: [
-                "Programmed a multi-stage console RPG involving PvP logic and boss fights.",
-                "Applied advanced Polymorphism to manage diverse character classes and states.",
-                "Designed a complex state machine for game loop management."
-            ],
-            delay: 0.8
-        },
-        {
-            title: "Timetable Application",
-            type: "Utility • Optimization",
-            stack: "C++, File Handling",
-            icon: Code2,
-            github: "https://github.com/Shadowx69/TimeTable-App",
-            points: ["Tool for optimizing weekly student schedules and conflict detection."],
-            delay: 0.9
+            title: "Core Coding Projects",
+            projects: [
+                {
+                    title: "Train Route Management System",
+                    type: "Algorithms • DSA",
+                    stack: "C++, Microsoft SQL Server, STL",
+                    icon: Code2,
+                    github: "https://github.com/Shadowx69/Train-Management-system-GUI-MySQL-c-",
+                    points: [
+                        "Designed system using doubly linked lists for efficient route traversal and storage.",
+                        "Optimized traversal algorithms to calculate fares and distances efficiently.",
+                        "Integrated persistent storage with SSMS for complex schedule management."
+                    ],
+                    delay: 0.1
+                },
+                {
+                    title: "ATM Simulation System",
+                    type: "Software Design • OOP",
+                    stack: "Java, Object Oriented Programming",
+                    icon: Code2,
+                    github: "https://github.com/Shadowx69/ATM",
+                    points: [
+                        "Simulated banking operations using object-oriented design principles.",
+                        "Implemented secure transaction logic, account management, and history tracking.",
+                        "Demonstrated encapsulation and inheritance for secure data handling."
+                    ],
+                    delay: 0.2
+                },
+                {
+                    title: "Turn-Based Strategy Game",
+                    type: "Game Dev",
+                    stack: "C++, Advanced OOP",
+                    icon: Code2,
+                    github: "https://github.com/Shadowx69/Text-Based-game--C--",
+                    points: [
+                        "Developed multi-stage game applying inheritance and polymorphism.",
+                        "Applied advanced Polymorphism to manage diverse character classes and states.",
+                        "Designed a complex state machine for game loop management."
+                    ],
+                    delay: 0.3
+                }
+            ]
         }
     ];
 
@@ -179,12 +225,21 @@ const Projects = () => {
                     <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mb-6">
                         Selected Works
                     </h2>
-                    <div className="h-1 w-20 bg-accent-blue rounded-full"></div>
+                    <div className="h-1 w-20 bg-accent-blue rounded-lg"></div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
-                        <ProjectCard key={index} {...project} />
+                <div className="space-y-24">
+                    {projectCategories.map((category, catIndex) => (
+                        <div key={catIndex}>
+                            <h3 className="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4 inline-block">
+                                {category.title}
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {category.projects.map((project, index) => (
+                                    <ProjectCard key={index} {...project} />
+                                ))}
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>

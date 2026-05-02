@@ -32,27 +32,27 @@ const SkillCard = ({ category, icon: Icon, skills, delay }) => (
 const Skills = () => {
     const categories = [
         {
-            category: "Languages",
+            category: "Programming",
             icon: Code2,
-            skills: ["C++", "C#", "Java", "Python", "JavaScript", "SQL"],
+            skills: ["C++", "Python", "JavaScript"],
             delay: 0.2
         },
         {
-            category: "Frameworks & Libraries",
+            category: "Frameworks",
             icon: Layout,
-            skills: ["TypeScript", "React.js", "Node.js", "Express.js", "Three.js", "FastAPI"],
+            skills: ["React.js", "Node/Express.js", "FastAPI", "TypeScript"],
             delay: 0.3
         },
         {
             category: "Databases",
             icon: Database,
-            skills: ["MySQL", "Microsoft SQL Server", "MongoDB"],
+            skills: ["SQL", "MongoDB"],
             delay: 0.4
         },
         {
-            category: "Tools & Concepts",
+            category: "Tools",
             icon: Terminal,
-            skills: ["Docker", "Git", "RESTful APIs", "OOP", "VS Code", "Postman", "DSA"],
+            skills: ["Visual Studio", "Docker", "Git", "Postman", "Vercel"],
             delay: 0.5
         }
     ];

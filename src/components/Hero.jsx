@@ -14,7 +14,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <span className="inline-block py-1 px-3 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue text-sm font-mono mb-6">
+                    <span className="inline-block py-1 px-3 rounded-lg bg-accent-blue/10 border border-accent-blue/20 text-accent-blue text-sm font-mono mb-6">
                         Available for Hire
                     </span>
                     <h1 className="text-5xl md:text-8xl font-bold mb-8 tracking-tighter text-white">
@@ -37,13 +37,13 @@ const Hero = () => {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <a
                             href="#projects"
-                            className="px-8 py-4 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition-all transform hover:translate-y-[-2px]"
+                            className="px-8 py-4 bg-white text-black rounded-xl font-bold hover:bg-gray-200 transition-all transform hover:translate-y-[-2px]"
                         >
                             View Work
                         </a>
                         <Link
                             to="/contact"
-                            className="px-8 py-4 bg-dark-200 text-white border border-white/10 rounded-full font-bold hover:bg-dark-300 transition-all transform hover:translate-y-[-2px] flex items-center gap-2"
+                            className="px-8 py-4 bg-dark-200 text-white border border-white/10 rounded-xl font-bold hover:bg-dark-300 transition-all transform hover:translate-y-[-2px] flex items-center gap-2"
                         >
                             Contact Me
                         </Link>
